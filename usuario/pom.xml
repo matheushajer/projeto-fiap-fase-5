@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.fiap.gerenciadorDepedidos</groupId>
-    <artifactId>clientes</artifactId>
+    <artifactId>usuarios</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>usuario</name>
     <description>Modulo para gerenciamento de usuários e login do sistema</description>
