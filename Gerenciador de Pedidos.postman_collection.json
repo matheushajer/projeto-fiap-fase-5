@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "282ede66-e959-41a3-9ee6-09901238e91b",
+		"_postman_id": "dc798305-9ee4-44a1-91fa-3d03c9254bb4",
 		"name": "Gerenciador de Pedidos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28808909",
-		"_collection_link": "https://universal-resonance-537924.postman.co/workspace/FIAP~10663ac0-6b40-415e-8e3c-6db1c08cca6c/collection/28808909-282ede66-e959-41a3-9ee6-09901238e91b?action=share&source=collection_link&creator=28808909"
+		"_exporter_id": "17146099"
 	},
 	"item": [
 		{
@@ -1242,6 +1241,74 @@
 								"me",
 								"shipment",
 								"calculate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Registrar Usuário",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"Karoline.leite\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/usuarios/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"usuarios",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login de Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"Karoline.leite\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/usuarios/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"usuarios",
+								"auth",
+								"login"
 							]
 						}
 					},
