@@ -1,6 +1,7 @@
 package br.com.fiap.gerenciadorDepedidos.usuario.security;
 
 import br.com.fiap.gerenciadorDepedidos.usuario.entidade.Usuario;
+import br.com.fiap.gerenciadorDepedidos.usuario.entidade.enumeration.UsuarioRoleEnum;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
@@ -21,9 +22,13 @@ public class TokenService {
     public String generateToken(Usuario usuario) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
+            String[] roles = usuario.getRoles().stream()
+                    .map(UsuarioRoleEnum::name)  // Usar o nome da enum para consistência
+                    .toArray(String[]::new);
             String token = JWT.create()
                     .withIssuer("auth-api")
                     .withSubject(usuario.getLogin())
+                    .withArrayClaim("roles", roles)
                     .withExpiresAt(genExpirationDate())
                     .sign(algorithm);
             return token;

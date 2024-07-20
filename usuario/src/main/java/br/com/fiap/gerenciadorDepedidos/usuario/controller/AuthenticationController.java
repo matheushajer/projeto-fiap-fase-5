@@ -2,9 +2,11 @@ package br.com.fiap.gerenciadorDepedidos.usuario.controller;
 
 import br.com.fiap.gerenciadorDepedidos.usuario.entidade.Usuario;
 import br.com.fiap.gerenciadorDepedidos.usuario.repository.UsuarioRepository;
+import br.com.fiap.gerenciadorDepedidos.usuario.request.UsuarioAuthRequest;
 import br.com.fiap.gerenciadorDepedidos.usuario.request.UsuarioRequest;
 import br.com.fiap.gerenciadorDepedidos.usuario.response.UsuarioResponse;
 import br.com.fiap.gerenciadorDepedidos.usuario.security.TokenService;
+import br.com.fiap.gerenciadorDepedidos.usuario.service.UserSenderService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -27,8 +29,10 @@ public class AuthenticationController {
 
     private final TokenService tokenService;
 
+    private final UserSenderService senderService;
+
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody @Valid UsuarioRequest data) {
+    public ResponseEntity<?> login(@RequestBody @Valid UsuarioAuthRequest data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
          var auth = this.authenticationManager.authenticate(usernamePassword);
 
@@ -38,13 +42,15 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody @Valid UsuarioRequest data) {
+    public ResponseEntity<?> register(@RequestBody @Valid UsuarioRequest data) {
         if (this.repository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
-        Usuario newUser = new Usuario(data.login(), encryptedPassword, data.role());
+        Usuario newUser = new Usuario(data.login(), encryptedPassword, data.roles());
 
-        this.repository.save(newUser);
+        Usuario saved = this.repository.save(newUser);
+
+        senderService.sendUser(saved);
 
         return ResponseEntity.ok().build();
     }
