@@ -901,16 +901,27 @@
 									"    pm.expect(responseData.categoria).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ikthcm9saW5lIiwicm9sZXMiOlsiVVNFUiJdLCJleHAiOjE3MjE0OTg0ODh9.tRILtB1XsNNNGAgz-Ovr8m0HG2D1eNBwDs5cuxKWFYc",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Teclado\",\r\n    \"descricao\": \"Teclado semi-mecânico, para uso diario.\",\r\n    \"preco\": 200.0,\r\n    \"quantidade\": 100,\r\n    \"categoria\": \"INFORMATICA\",\r\n    \"altura\": 3,\r\n    \"largura\": 15,\r\n    \"comprimento\": 30,\r\n    \"peso\": 0.3\r\n}",
+							"raw": "{\r\n    \"nome\": \"Teclado 2\",\r\n    \"descricao\": \"Teclado semi-mecânico, para uso diario.\",\r\n    \"preco\": 200.0,\r\n    \"quantidade\": 100,\r\n    \"categoria\": \"INFORMATICA\",\r\n    \"altura\": 3,\r\n    \"largura\": 15,\r\n    \"comprimento\": 30,\r\n    \"peso\": 0.3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -974,6 +985,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ikthcm9sIEdlcmVuY2lhIiwicm9sZXMiOlsiVVNFUiIsIkFETUlOIl0sImV4cCI6MTcyMTQ5ODc0OH0.r3W56u4dianI1J5qYgelKYwFkqwHP8iQF3K9bPg7SVA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -1004,6 +1025,16 @@
 				{
 					"name": "Deletar Produto By Id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE0OTg5Mjd9.HxmlSDKMgNDo0uhy_4K3Aa5oKgqA5VCxhUjBgv4-Nbo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -1016,7 +1047,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8082/produtos/produtos/1",
+							"raw": "localhost:8082/produtos/produtos/2",
 							"host": [
 								"localhost"
 							],
@@ -1024,7 +1055,7 @@
 							"path": [
 								"produtos",
 								"produtos",
-								"1"
+								"2"
 							],
 							"query": [
 								{
@@ -1261,7 +1292,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"login\":\"Karoline.leite\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"raw": "{\r\n    \"login\":\"Karol Gerencia\",\r\n    \"password\":\"123456\",\r\n    \"roles\":[\"ADMIN\",\"USER\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1291,7 +1322,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"login\":\"Karoline.leite\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"raw": "{\r\n    \"login\":\"Matheus\",\r\n    \"password\":\"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
