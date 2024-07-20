@@ -26,8 +26,8 @@ public class SecurityConfig {
          return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.GET,"/produtos/**").hasAnyRole(USER.getRole(),ADMIN.getRole())
-                        .requestMatchers(HttpMethod.POST,"/produtos/criar-produto").hasAnyRole(ADMIN.getRole())
+                        .requestMatchers(HttpMethod.GET,"/produtos/**").hasAnyRole(USER.getRole(), ADMIN.getRole())
+                        .requestMatchers(HttpMethod.POST,"/produtos/**").hasAnyRole(ADMIN.getRole())
                         .requestMatchers(HttpMethod.PATCH,"/produtos/atualizar-produto/{id}").hasAnyRole(ADMIN.getRole())
                         .requestMatchers(HttpMethod.DELETE, "/produtos/{id}").hasAnyRole(ADMIN.getRole())
                         .requestMatchers("/user").permitAll()
