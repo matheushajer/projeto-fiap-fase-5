@@ -10,6 +10,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import static br.com.fiap.gerenciadorDepedidos.entrega.security.enumeration.UsuarioRoleEnum.ADMIN;
+import static br.com.fiap.gerenciadorDepedidos.entrega.security.enumeration.UsuarioRoleEnum.USER;
 
 @Configuration
 public class SecurityConfig {
@@ -25,7 +26,7 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/entregas/**").hasAnyRole(ADMIN.getRole())
+                        .requestMatchers(HttpMethod.POST, "/entregas/criar-entrega").hasAnyRole(ADMIN.getRole(), USER.getRole())
                         .requestMatchers("/user").permitAll()
                         .anyRequest().authenticated()
                 )

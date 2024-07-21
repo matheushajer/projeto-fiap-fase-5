@@ -9,6 +9,7 @@ import br.com.fiap.gerenciadorDepedidos.entrega.records.DadosCriacaoEntregaDTO;
 import br.com.fiap.gerenciadorDepedidos.entrega.records.DadosCriacaoProdutoParaEntregaDTO;
 import br.com.fiap.gerenciadorDepedidos.entrega.records.DadosProdutoParaEntregaDTO;
 import br.com.fiap.gerenciadorDepedidos.entrega.records.DadosRetornoCriacaoEntregaDTO;
+import br.com.fiap.gerenciadorDepedidos.entrega.security.service.TokenUserService;
 import br.com.fiap.gerenciadorDepedidos.entrega.services.apiMelhorEnvio.*;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +34,13 @@ public class EntregaAdapter {
     ClienteClient clienteClient;
     @Autowired
     ApiMelhorEnvioConsumer apiMelhorEnvioConsumer;
+    @Autowired
+    TokenUserService tokenUserService;
 
     public EntregaEntity converterParaEntity(DadosCriacaoEntregaDTO dadosCriacaoEntregaDTO) throws IOException, InterruptedException {
 
-        String cepDestinatario = clienteClient.buscarCepCliente(dadosCriacaoEntregaDTO.cliente_id());
+        String bearerToken = "Bearer " + tokenUserService.extractTokenFromRequest();
+        String cepDestinatario = clienteClient.buscarCepCliente(dadosCriacaoEntregaDTO.cliente_id(), bearerToken);
 
         List<ProdutosEntity> produtos = new ArrayList<>();
 
@@ -50,7 +54,7 @@ public class EntregaAdapter {
             produtosEntity.setProduto_id(item.produto_id());
             produtosEntity.setQuantidade(item.quantidade());
 
-            DadosProdutoParaEntregaDTO dadosProdutoParaEntregaDTO = produtoClient.dadosProdutoParaEntrega(produtosEntity.getProduto_id());
+            DadosProdutoParaEntregaDTO dadosProdutoParaEntregaDTO = produtoClient.dadosProdutoParaEntrega(produtosEntity.getProduto_id(), bearerToken);
 
             produtosEntity.setAltura(dadosProdutoParaEntregaDTO.altura());
             produtosEntity.setLargura(dadosProdutoParaEntregaDTO.largura());

@@ -15,6 +15,16 @@
 						{
 							"name": "Listar Clientes",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -37,6 +47,16 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"body": {
@@ -49,7 +69,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8082/clientes/clientes/buscar-cep/3",
+									"raw": "localhost:8082/clientes/clientes/buscar-cep/1",
 									"host": [
 										"localhost"
 									],
@@ -58,7 +78,7 @@
 										"clientes",
 										"clientes",
 										"buscar-cep",
-										"3"
+										"1"
 									]
 								}
 							},
@@ -67,6 +87,16 @@
 						{
 							"name": "Buscar Cliente pelo CNPJ",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -95,6 +125,40 @@
 				{
 					"name": "POSTs",
 					"item": [
+						{
+							"name": "APIs para Outros Micreserviço",
+							"item": [
+								{
+									"name": "Salvar o usuário da base de clientes",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"123e4567-e89b-12d3-a456-426614174000\",\r\n    \"login\": \"exampleLogin\",\r\n    \"password\": \"examplePassword\",\r\n    \"roles\": [\r\n        \"USER\",\r\n        \"ADMIN\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8082/clientes/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8082",
+											"path": [
+												"clientes",
+												"user"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
 						{
 							"name": "Criar Cliente",
 							"event": [
@@ -141,6 +205,16 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -171,6 +245,16 @@
 						{
 							"name": "Adicionar Telefone",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -183,7 +267,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8082/clientes/telefones/2/adicionar-telefone",
+									"raw": "localhost:8082/clientes/telefones/1/adicionar-telefone",
 									"host": [
 										"localhost"
 									],
@@ -191,7 +275,7 @@
 									"path": [
 										"clientes",
 										"telefones",
-										"2",
+										"1",
 										"adicionar-telefone"
 									]
 								}
@@ -201,6 +285,16 @@
 						{
 							"name": "Adicionar Endereço",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -213,7 +307,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8082/clientes/enderecos/2/adicionar-endereco",
+									"raw": "localhost:8082/clientes/enderecos/1/adicionar-endereco",
 									"host": [
 										"localhost"
 									],
@@ -221,7 +315,7 @@
 									"path": [
 										"clientes",
 										"enderecos",
-										"2",
+										"1",
 										"adicionar-endereco"
 									]
 								}
@@ -236,6 +330,16 @@
 						{
 							"name": "Deletar telefone",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "DELETE",
 								"header": [],
 								"url": {
@@ -256,6 +360,16 @@
 						{
 							"name": "Deletar Endereço",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "DELETE",
 								"header": [],
 								"url": {
@@ -281,6 +395,16 @@
 						{
 							"name": "Atualizar Telefone Principal",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
@@ -311,6 +435,16 @@
 						{
 							"name": "Atualizar Endereço Principal",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
@@ -382,11 +516,22 @@
 											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjgyNjJ9.AwAUeY8htrFtgCyXDLhnrwz97d5uqrrj0odor0JRW60",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PATCH",
 								"header": [],
 								"body": {
@@ -399,7 +544,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8082/clientes/clientes/2/atualizar-nome",
+									"raw": "localhost:8082/clientes/clientes/1/atualizar-nome",
 									"host": [
 										"localhost"
 									],
@@ -407,7 +552,7 @@
 									"path": [
 										"clientes",
 										"clientes",
-										"2",
+										"1",
 										"atualizar-nome"
 									]
 								},
@@ -462,7 +607,8 @@
 											"  pm.expect(responseData.pageable).to.exist;",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -470,6 +616,16 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1ODE2OTF9.Sa6PPuQZuNI-SgVMXkGISjtaa5sKT9YXPr9surO8Mxg",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"body": {
@@ -568,6 +724,16 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1ODE2OTF9.Sa6PPuQZuNI-SgVMXkGISjtaa5sKT9YXPr9surO8Mxg",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"body": {
@@ -667,6 +833,16 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1ODE2OTF9.Sa6PPuQZuNI-SgVMXkGISjtaa5sKT9YXPr9surO8Mxg",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"body": {
@@ -764,6 +940,16 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1ODE2OTF9.Sa6PPuQZuNI-SgVMXkGISjtaa5sKT9YXPr9surO8Mxg",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -790,10 +976,20 @@
 						{
 							"name": "Buscar  Dados Para Pedido",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1ODE2OTF9.Sa6PPuQZuNI-SgVMXkGISjtaa5sKT9YXPr9surO8Mxg",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8082/produtos/produtos/dados-pedido/4",
+									"raw": "localhost:8082/produtos/produtos/dados-pedido/5",
 									"host": [
 										"localhost"
 									],
@@ -802,7 +998,7 @@
 										"produtos",
 										"produtos",
 										"dados-pedido",
-										"4"
+										"5"
 									]
 								}
 							},
@@ -811,10 +1007,20 @@
 						{
 							"name": "Buscar  Dados Para Entrega",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1ODE2OTF9.Sa6PPuQZuNI-SgVMXkGISjtaa5sKT9YXPr9surO8Mxg",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8082/produtos/produtos/dados-entrega/4",
+									"raw": "localhost:8082/produtos/produtos/dados-entrega/5",
 									"host": [
 										"localhost"
 									],
@@ -823,7 +1029,36 @@
 										"produtos",
 										"produtos",
 										"dados-entrega",
-										"4"
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Salvar o usuário da base de produtos",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"123e4567-e89b-12d3-a456-426614174000\",\r\n    \"login\": \"exampleLogin\",\r\n    \"password\": \"examplePassword\",\r\n    \"roles\": [\r\n        \"USER\",\r\n        \"ADMIN\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/produtos/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"produtos",
+										"user"
 									]
 								}
 							},
@@ -837,6 +1072,16 @@
 						{
 							"name": "Importar CSV",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1ODE2OTF9.Sa6PPuQZuNI-SgVMXkGISjtaa5sKT9YXPr9surO8Mxg",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -845,7 +1090,7 @@
 										{
 											"key": "file",
 											"type": "file",
-											"src": "postman-cloud:///1ef0ae01-b347-4730-97e2-043c0f2010a7"
+											"src": "/C:/Users/karol/Documents/pos_tech/fase_5/tech_chalenge/projeto-fiap-fase-5/produtos/src/main/resources/carga-de-produtos.csv"
 										}
 									]
 								},
@@ -912,7 +1157,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ikthcm9saW5lIiwicm9sZXMiOlsiVVNFUiJdLCJleHAiOjE3MjE0OTg0ODh9.tRILtB1XsNNNGAgz-Ovr8m0HG2D1eNBwDs5cuxKWFYc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1ODE2OTF9.Sa6PPuQZuNI-SgVMXkGISjtaa5sKT9YXPr9surO8Mxg",
 									"type": "string"
 								}
 							]
@@ -921,7 +1166,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Teclado 2\",\r\n    \"descricao\": \"Teclado semi-mecânico, para uso diario.\",\r\n    \"preco\": 200.0,\r\n    \"quantidade\": 100,\r\n    \"categoria\": \"INFORMATICA\",\r\n    \"altura\": 3,\r\n    \"largura\": 15,\r\n    \"comprimento\": 30,\r\n    \"peso\": 0.3\r\n}",
+							"raw": "{\r\n    \"nome\": \"Teclado\",\r\n    \"descricao\": \"Teclado semi-mecânico, para uso diario.\",\r\n    \"preco\": 200.0,\r\n    \"quantidade\": 100,\r\n    \"categoria\": \"INFORMATICA\",\r\n    \"altura\": 3,\r\n    \"largura\": 15,\r\n    \"comprimento\": 30,\r\n    \"peso\": 0.3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -990,7 +1235,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ikthcm9sIEdlcmVuY2lhIiwicm9sZXMiOlsiVVNFUiIsIkFETUlOIl0sImV4cCI6MTcyMTQ5ODc0OH0.r3W56u4dianI1J5qYgelKYwFkqwHP8iQF3K9bPg7SVA",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1Mjg5MDR9.plk5uBjzk80gsRwGTUWAWk2OttxUW-a7xW5M9oXlX0w",
 									"type": "string"
 								}
 							]
@@ -1007,7 +1252,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8082/produtos/produtos/atualizar-produto/2",
+							"raw": "localhost:8082/produtos/produtos/atualizar-produto/4",
 							"host": [
 								"localhost"
 							],
@@ -1016,7 +1261,7 @@
 								"produtos",
 								"produtos",
 								"atualizar-produto",
-								"2"
+								"4"
 							]
 						}
 					},
@@ -1030,7 +1275,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE0OTg5Mjd9.HxmlSDKMgNDo0uhy_4K3Aa5oKgqA5VCxhUjBgv4-Nbo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1MjkwNjV9.MqlnI48corhUqvo3NboOQMME8rd4WPF3CI3p9tD7VRE",
 									"type": "string"
 								}
 							]
@@ -1047,7 +1292,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8082/produtos/produtos/2",
+							"raw": "localhost:8082/produtos/produtos/4",
 							"host": [
 								"localhost"
 							],
@@ -1055,7 +1300,7 @@
 							"path": [
 								"produtos",
 								"produtos",
-								"2"
+								"4"
 							],
 							"query": [
 								{
@@ -1079,6 +1324,16 @@
 						{
 							"name": "Inserir  Dados  de Entrega",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ikthcm9saW5lIiwicm9sZXMiOlsiVVNFUiJdLCJleHAiOjE3MjE1Mjk2OTd9.buEz5-ColGbl81FPCvVAnXkJy_2XE7jE1x293ZHt-OY",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PATCH",
 								"header": [],
 								"body": {
@@ -1091,7 +1346,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8082/pedidos/pedidos/inserir-dados-entrega/8",
+									"raw": "localhost:8082/pedidos/pedidos/inserir-dados-entrega/1",
 									"host": [
 										"localhost"
 									],
@@ -1100,7 +1355,36 @@
 										"pedidos",
 										"pedidos",
 										"inserir-dados-entrega",
-										"8"
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Salvar o usuário da base de pedidos",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"123e4567-e89b-12d3-a456-426614174000\",\r\n    \"login\": \"exampleLogin\",\r\n    \"password\": \"examplePassword\",\r\n    \"roles\": [\r\n        \"USER\",\r\n        \"ADMIN\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/pedidos/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"pedidos",
+										"user"
 									]
 								}
 							},
@@ -1111,11 +1395,21 @@
 				{
 					"name": "Criar Pedido",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ikthcm9saW5lIiwicm9sZXMiOlsiVVNFUiJdLCJleHAiOjE3MjE1ODYxNzN9.v59GBaitTDr1GL3QB3tsFjOxu7GTefzclA33eCmAiRI",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"clienteId\": 4,\r\n    \"itensPedido\": [\r\n        {\r\n        \"produtoId\": 1,\r\n        \"quantidade\": 1\r\n        },\r\n        {\r\n        \"produtoId\": 2,\r\n        \"quantidade\": 10\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"clienteId\": 1,\r\n    \"itensPedido\": [\r\n        {\r\n        \"produtoId\": 5,\r\n        \"quantidade\": 1\r\n        },\r\n        {\r\n        \"produtoId\": 6,\r\n        \"quantidade\": 10\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1147,6 +1441,16 @@
 				{
 					"name": "Atualizar Status Pedido",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ikthcm9saW5lIiwicm9sZXMiOlsiVVNFUiJdLCJleHAiOjE3MjE1Mjk2OTd9.buEz5-ColGbl81FPCvVAnXkJy_2XE7jE1x293ZHt-OY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -1187,13 +1491,57 @@
 			"name": "Entrega",
 			"item": [
 				{
+					"name": "APIs para Outros Micreserviço Copy",
+					"item": [
+						{
+							"name": "Salvar o usuário da base de entregas",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"123e4567-e89b-12d3-a456-426614174000\",\r\n    \"login\": \"exampleLogin\",\r\n    \"password\": \"examplePassword\",\r\n    \"roles\": [\r\n        \"USER\",\r\n        \"ADMIN\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/entregas/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"entregas",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Criar Entrega",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Ik1hdGhldXMiLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3MjE1ODQwNDJ9.XdmkYohSGP_ZGIjTADNDCFI1evfpvbDQz6w-o2vtiJw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"pedido_id\": 1,\r\n    \"cliente_id\": 4,\r\n    \"produtos\": [\r\n        {\r\n            \"produto_id\": \"1\",\r\n            \"quantidade\": 1\r\n        },\r\n        {\r\n            \"produto_id\": \"2\",\r\n            \"quantidade\": 10\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"pedido_id\": 1,\r\n    \"cliente_id\": 1,\r\n    \"produtos\": [\r\n        {\r\n            \"produto_id\": \"5\",\r\n            \"quantidade\": 1\r\n        },\r\n        {\r\n            \"produto_id\": \"6\",\r\n            \"quantidade\": 10\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1318,11 +1666,14 @@
 				{
 					"name": "Login de Usuário",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"login\":\"Matheus\",\r\n    \"password\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"login\":\"Karoline\",\r\n    \"password\":\"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

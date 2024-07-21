@@ -9,6 +9,7 @@ import br.com.fiap.gerenciadorDepedidos.pedidos.records.DadosInsercaoEntregaDTO;
 import br.com.fiap.gerenciadorDepedidos.pedidos.records.DadosProdutoParaItemPedidoDTO;
 import br.com.fiap.gerenciadorDepedidos.pedidos.records.DadosRetornoCriacaoPedidoDTO;
 import br.com.fiap.gerenciadorDepedidos.pedidos.repositories.PedidoRepository;
+import br.com.fiap.gerenciadorDepedidos.pedidos.security.service.TokenUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +35,9 @@ public class CriarPedidoUseCase {
     @Autowired
     EntregaClient entregaClient;
 
+    @Autowired
+    TokenUserService tokenUserService;
+
     /**
      * Método para efetuar a criação de um novo pedido.
      *
@@ -44,8 +48,10 @@ public class CriarPedidoUseCase {
 
         List<DadosProdutoParaItemPedidoDTO> dadosProdutoParaItemPedidoDTO = new ArrayList<>();
 
+        String bearerToken = "Bearer " + tokenUserService.extractTokenFromRequest();
+
         dadosCriacaoPedidoDTO.itensPedido().forEach(item ->
-                dadosProdutoParaItemPedidoDTO.add(produtoClient.buscarDadosParaItemPedido(item.produtoId()))
+                dadosProdutoParaItemPedidoDTO.add(produtoClient.buscarDadosParaItemPedido(item.produtoId(), bearerToken))
         );
 
         PedidoEntity pedidoEntity = pedidoAdapter.converterParaEntity(dadosCriacaoPedidoDTO,
@@ -54,7 +60,7 @@ public class CriarPedidoUseCase {
         pedidoRepository.save(pedidoEntity);
 
         DadosInsercaoEntregaDTO dadosInsercaoEntregaDTO;
-        dadosInsercaoEntregaDTO = entregaClient.buscarDadosEntrega(pedidoAdapter.extrairDadosSolicitacaoEntrega(pedidoEntity));
+        dadosInsercaoEntregaDTO = entregaClient.buscarDadosEntrega(pedidoAdapter.extrairDadosSolicitacaoEntrega(pedidoEntity), bearerToken);
 
         pedidoEntity.setPrazoDeEntrega(dadosInsercaoEntregaDTO.prazoDeEntrega());
         pedidoEntity.setFrete(dadosInsercaoEntregaDTO.frete());

@@ -4,6 +4,7 @@ import br.com.fiap.gerenciadorDepedidos.pedidos.records.DadosInsercaoEntregaDTO;
 import br.com.fiap.gerenciadorDepedidos.pedidos.records.entregas.DadosSolicitacaoEntregaDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,6 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface EntregaClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/entregas/criar-entrega")
-    DadosInsercaoEntregaDTO buscarDadosEntrega(@RequestBody DadosSolicitacaoEntregaDTO dadosSolicitacaoEntregaDTO);
+    DadosInsercaoEntregaDTO buscarDadosEntrega(@RequestBody DadosSolicitacaoEntregaDTO dadosSolicitacaoEntregaDTO, @RequestHeader("Authorization") String bearerToken);
 
 }

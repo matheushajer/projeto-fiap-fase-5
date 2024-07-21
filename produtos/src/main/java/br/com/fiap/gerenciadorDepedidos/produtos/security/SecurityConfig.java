@@ -28,8 +28,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET,"/produtos/**").hasAnyRole(USER.getRole(), ADMIN.getRole())
                         .requestMatchers(HttpMethod.POST,"/produtos/**").hasAnyRole(ADMIN.getRole())
-                        .requestMatchers(HttpMethod.PATCH,"/produtos/atualizar-produto/{id}").hasAnyRole(ADMIN.getRole())
-                        .requestMatchers(HttpMethod.DELETE, "/produtos/{id}").hasAnyRole(ADMIN.getRole())
+                        .requestMatchers(HttpMethod.PATCH,"/produtos/atualizar-produto/{produto_id}").hasAnyRole(ADMIN.getRole())
+                        .requestMatchers(HttpMethod.DELETE, "/produtos/{produto_id}").hasAnyRole(ADMIN.getRole())
                         .requestMatchers("/user").permitAll()
                         .anyRequest().authenticated()
                 )

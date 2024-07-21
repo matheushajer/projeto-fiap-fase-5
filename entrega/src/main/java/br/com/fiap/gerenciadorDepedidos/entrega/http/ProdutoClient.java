@@ -3,6 +3,7 @@ package br.com.fiap.gerenciadorDepedidos.entrega.http;
 import br.com.fiap.gerenciadorDepedidos.entrega.records.DadosProdutoParaEntregaDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -14,6 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface ProdutoClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/produtos/dados-entrega/{id}")
-    DadosProdutoParaEntregaDTO dadosProdutoParaEntrega(@PathVariable Long id);
+    DadosProdutoParaEntregaDTO dadosProdutoParaEntrega(@PathVariable Long id, @RequestHeader("Authorization") String bearerToken);
 
 }

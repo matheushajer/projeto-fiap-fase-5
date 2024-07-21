@@ -10,6 +10,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import static br.com.fiap.gerenciadorDepedidos.clientes.security.enumeration.UsuarioRoleEnum.ADMIN;
+import static br.com.fiap.gerenciadorDepedidos.clientes.security.enumeration.UsuarioRoleEnum.USER;
 
 
 @Configuration
@@ -26,7 +27,7 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.GET, "/clientes/**").hasAnyRole(ADMIN.getRole())
+                        .requestMatchers(HttpMethod.GET, "/clientes/**").hasAnyRole(ADMIN.getRole(), USER.getRole())
                         .requestMatchers(HttpMethod.POST, "/clientes/**").hasAnyRole(ADMIN.getRole())
                         .requestMatchers(HttpMethod.POST, "/enderecos/**").hasAnyRole(ADMIN.getRole())
                         .requestMatchers(HttpMethod.POST, "/telefones/**").hasAnyRole(ADMIN.getRole())
