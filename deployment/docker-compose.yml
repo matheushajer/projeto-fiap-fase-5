@@ -1,0 +1,89 @@
+version: "3.8"
+
+networks:
+  fase5_net:
+
+services:
+  postgres:
+    image: yuriesena/fase5:postgres
+    ports:
+      - "5433:5433"
+    networks:
+      - fase5_net
+
+  server:
+    image: yuriesena/fase5:server
+    depends_on:
+      - postgres
+    networks:
+      - fase5_net
+    ports:
+      - "8081:8081"
+
+  gateway:
+    image: yuriesena/fase5:gateway
+    ports:
+      - "8082:8082"
+    depends_on:
+      - usuarios
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://server:8081/eureka
+    networks:
+      - fase5_net
+
+  entrega:
+    image: yuriesena/fase5:entrega
+    depends_on:
+      - server
+    networks:
+      - fase5_net
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5433/entregas
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://server:8081/eureka
+      EUREKA_INSTANCE_HOSTNAME: entrega
+
+
+
+  clientes:
+    image: yuriesena/fase5:clientes
+    depends_on:
+      - entrega
+    networks:
+      - fase5_net
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5433/clientes
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://server:8081/eureka
+      EUREKA_INSTANCE_HOSTNAME: clientes
+
+  produtos:
+    image: yuriesena/fase5:produtos
+    depends_on:
+      - clientes
+    networks:
+      - fase5_net
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5433/produtos
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://server:8081/eureka
+      EUREKA_INSTANCE_HOSTNAME: produtos
+
+  pedidos:
+    image: yuriesena/fase5:pedidos
+    depends_on:
+      - produtos
+    networks:
+      - fase5_net
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5433/pedidos
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://server:8081/eureka
+      EUREKA_INSTANCE_HOSTNAME: pedidos
+
+  usuarios:
+    image: yuriesena/fase5:usuarios
+    depends_on:
+      - pedidos
+    networks:
+      - fase5_net
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5433/usuarios
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://server:8081/eureka
+      EUREKA_INSTANCE_HOSTNAME: usuarios

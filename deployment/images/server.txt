@@ -1,0 +1,208 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-07-22T23:16:59.260Z  INFO 1 --- [server] [           main] b.c.f.g.server.ServerApplication         : Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/server-0.0.1-SNAPSHOT.jar started by root in /app)
+2024-07-22T23:16:59.268Z  INFO 1 --- [server] [           main] b.c.f.g.server.ServerApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-22T23:17:07.738Z  INFO 1 --- [server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=4d9be699-6ff8-3c53-9387-145c48f513a9
+2024-07-22T23:17:07.977Z  WARN 1 --- [server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-22T23:17:07.993Z  WARN 1 --- [server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-22T23:17:09.382Z  INFO 1 --- [server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-22T23:17:09.431Z  INFO 1 --- [server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-22T23:17:09.432Z  INFO 1 --- [server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-07-22T23:17:09.615Z  INFO 1 --- [server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-22T23:17:09.619Z  INFO 1 --- [server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9719 ms
+2024-07-22T23:17:15.555Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2024-07-22T23:17:15.560Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2024-07-22T23:17:16.995Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2024-07-22T23:17:16.995Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2024-07-22T23:17:22.870Z  WARN 1 --- [server] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-07-22T23:17:22.983Z  INFO 1 --- [server] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-07-22T23:17:23.240Z  INFO 1 --- [server] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-07-22T23:17:23.242Z  INFO 1 --- [server] [           main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2024-07-22T23:17:23.327Z  INFO 1 --- [server] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1721690243325 with initial instances count: 0
+2024-07-22T23:17:23.544Z  INFO 1 --- [server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2024-07-22T23:17:23.555Z  INFO 1 --- [server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8081/eureka/]
+2024-07-22T23:17:24.113Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2024-07-22T23:17:24.113Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2024-07-22T23:17:24.114Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2024-07-22T23:17:24.115Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2024-07-22T23:17:24.488Z  INFO 1 --- [server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8081/eureka/
+2024-07-22T23:17:24.520Z  INFO 1 --- [server] [           main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2024-07-22T23:17:24.526Z  INFO 1 --- [server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2024-07-22T23:17:24.561Z  INFO 1 --- [server] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-07-22T23:17:24.703Z  INFO 1 --- [server] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SERVER with eureka with status UP
+2024-07-22T23:17:24.793Z  INFO 1 --- [server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2024-07-22T23:17:24.794Z  INFO 1 --- [server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2024-07-22T23:17:24.794Z  INFO 1 --- [server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2024-07-22T23:17:24.794Z  INFO 1 --- [server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2024-07-22T23:17:24.795Z  INFO 1 --- [server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2024-07-22T23:17:24.818Z  INFO 1 --- [server] [       Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2024-07-22T23:17:24.860Z  INFO 1 --- [server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2024-07-22T23:17:24.864Z  INFO 1 --- [server] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2024-07-22T23:17:24.942Z  INFO 1 --- [server] [           main] b.c.f.g.server.ServerApplication         : Started ServerApplication in 28.459 seconds (process running for 31.038)
+2024-07-22T23:17:35.593Z  INFO 1 --- [server] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-22T23:17:35.594Z  INFO 1 --- [server] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-22T23:17:35.598Z  INFO 1 --- [server] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-07-22T23:17:38.985Z  INFO 1 --- [server] [io-8081-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ENTREGAS/entregas:-2064369566 with status UP (replication=false)
+2024-07-22T23:17:40.203Z  INFO 1 --- [server] [nio-8081-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ENTREGAS/entregas:-2064369566 with status UP (replication=true)
+2024-07-22T23:17:41.387Z  INFO 1 --- [server] [nio-8081-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUTOS/produtos:1570885872 with status UP (replication=false)
+2024-07-22T23:17:41.898Z  INFO 1 --- [server] [nio-8081-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUTOS/produtos:1570885872 with status UP (replication=true)
+2024-07-22T23:17:42.554Z  INFO 1 --- [server] [nio-8081-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CLIENTES/clientes:42564255 with status UP (replication=false)
+2024-07-22T23:17:43.063Z  INFO 1 --- [server] [nio-8081-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CLIENTES/clientes:42564255 with status UP (replication=true)
+2024-07-22T23:17:43.270Z  INFO 1 --- [server] [io-8081-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USUARIOS/usuarios:1697408582 with status UP (replication=false)
+2024-07-22T23:17:43.329Z  INFO 1 --- [server] [nio-8081-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PEDIDOS/pedidos:485179189 with status UP (replication=false)
+2024-07-22T23:17:43.787Z  INFO 1 --- [server] [nio-8081-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USUARIOS/usuarios:1697408582 with status UP (replication=true)
+2024-07-22T23:17:43.788Z  INFO 1 --- [server] [nio-8081-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PEDIDOS/pedidos:485179189 with status UP (replication=true)
+2024-07-22T23:17:48.744Z  WARN 1 --- [server] [nio-8081-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY - 5325e14d0c7f:gateway:8082
+2024-07-22T23:17:48.744Z  WARN 1 --- [server] [nio-8081-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY - 5325e14d0c7f:gateway:8082
+2024-07-22T23:17:48.776Z  INFO 1 --- [server] [nio-8081-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY/5325e14d0c7f:gateway:8082 with status UP (replication=false)
+2024-07-22T23:17:49.292Z  INFO 1 --- [server] [nio-8081-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY/5325e14d0c7f:gateway:8082 with status UP (replication=true)
+2024-07-22T23:18:24.796Z  INFO 1 --- [server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2024-07-22T23:19:24.797Z  INFO 1 --- [server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2024-07-22T23:20:24.797Z  INFO 1 --- [server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2024-07-22T23:20:52.770Z  INFO 1 --- [server] [nio-8081-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USUARIOS/usuarios:1697408582 with status DOWN (replication=false)
+2024-07-22T23:20:52.774Z  INFO 1 --- [server] [nio-8081-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUTOS/produtos:1570885872 with status DOWN (replication=false)
+2024-07-22T23:20:52.774Z  INFO 1 --- [server] [nio-8081-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PEDIDOS/pedidos:485179189 with status DOWN (replication=false)
+2024-07-22T23:20:52.777Z  INFO 1 --- [server] [nio-8081-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ENTREGAS/entregas:-2064369566 with status DOWN (replication=false)
+2024-07-22T23:20:53.282Z  INFO 1 --- [server] [nio-8081-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USUARIOS/usuarios:1697408582 with status DOWN (replication=true)
+2024-07-22T23:20:53.283Z  INFO 1 --- [server] [nio-8081-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUTOS/produtos:1570885872 with status DOWN (replication=true)
+2024-07-22T23:20:53.284Z  INFO 1 --- [server] [nio-8081-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PEDIDOS/pedidos:485179189 with status DOWN (replication=true)
+2024-07-22T23:20:53.284Z  INFO 1 --- [server] [nio-8081-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ENTREGAS/entregas:-2064369566 with status DOWN (replication=true)
+2024-07-22T23:20:58.241Z  INFO 1 --- [server] [nio-8081-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CLIENTES/clientes:42564255 with status DOWN (replication=false)
+2024-07-22T23:20:58.755Z  INFO 1 --- [server] [nio-8081-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CLIENTES/clientes:42564255 with status DOWN (replication=true)
+2024-07-22T23:21:01.683Z  INFO 1 --- [server] [nio-8081-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY/5325e14d0c7f:gateway:8082 with status DOWN (replication=false)
+2024-07-22T23:21:02.198Z  INFO 1 --- [server] [nio-8081-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY/5325e14d0c7f:gateway:8082 with status DOWN (replication=true)
+2024-07-22T23:21:07.191Z  INFO 1 --- [server] [ionShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application SERVER with eureka with status DOWN
+2024-07-22T23:21:07.200Z  INFO 1 --- [server] [ionShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
+2024-07-22T23:21:07.207Z  INFO 1 --- [server] [ionShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2024-07-22T23:21:07.216Z ERROR 1 --- [server] [t-Conn-Cleaner2] c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
+
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.5.jar!/:na]
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.5.jar!/:na]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.5.jar!/:na]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.5.jar!/:na]
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:347) ~[eureka-client-jersey3-2.0.2.jar!/:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-07-22T23:21:07.226Z  INFO 1 --- [server] [ionShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2024-07-22T23:21:07.226Z  INFO 1 --- [server] [ionShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
+2024-07-22T23:21:07.227Z  INFO 1 --- [server] [ionShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2024-07-22T23:21:07.233Z  INFO 1 --- [server] [ionShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2024-07-22T23:21:07.240Z  INFO 1 --- [server] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-07-22T23:21:07.241Z  INFO 1 --- [server] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-07-22T23:22:50.280Z  INFO 1 --- [server] [           main] b.c.f.g.server.ServerApplication         : Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/server-0.0.1-SNAPSHOT.jar started by root in /app)
+2024-07-22T23:22:50.288Z  INFO 1 --- [server] [           main] b.c.f.g.server.ServerApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-22T23:22:56.633Z  INFO 1 --- [server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=4d9be699-6ff8-3c53-9387-145c48f513a9
+2024-07-22T23:22:56.948Z  WARN 1 --- [server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-22T23:22:56.959Z  WARN 1 --- [server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-22T23:22:58.046Z  INFO 1 --- [server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-22T23:22:58.094Z  INFO 1 --- [server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-22T23:22:58.094Z  INFO 1 --- [server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-07-22T23:22:58.353Z  INFO 1 --- [server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-22T23:22:58.360Z  INFO 1 --- [server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7684 ms
+2024-07-22T23:23:03.916Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2024-07-22T23:23:03.921Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2024-07-22T23:23:04.791Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2024-07-22T23:23:04.792Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2024-07-22T23:23:10.371Z  WARN 1 --- [server] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-07-22T23:23:10.553Z  INFO 1 --- [server] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-07-22T23:23:10.671Z  INFO 1 --- [server] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-07-22T23:23:10.672Z  INFO 1 --- [server] [           main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2024-07-22T23:23:10.689Z  INFO 1 --- [server] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1721690590687 with initial instances count: 0
+2024-07-22T23:23:10.917Z  INFO 1 --- [server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2024-07-22T23:23:10.936Z  INFO 1 --- [server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8081/eureka/]
+2024-07-22T23:23:11.756Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2024-07-22T23:23:11.772Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2024-07-22T23:23:11.773Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2024-07-22T23:23:11.773Z  INFO 1 --- [server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2024-07-22T23:23:12.755Z  INFO 1 --- [server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8081/eureka/
+2024-07-22T23:23:12.799Z  INFO 1 --- [server] [           main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2024-07-22T23:23:12.828Z  INFO 1 --- [server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2024-07-22T23:23:12.924Z  INFO 1 --- [server] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-07-22T23:23:13.275Z  INFO 1 --- [server] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SERVER with eureka with status UP
+2024-07-22T23:23:13.367Z  INFO 1 --- [server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2024-07-22T23:23:13.373Z  INFO 1 --- [server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2024-07-22T23:23:13.379Z  INFO 1 --- [server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2024-07-22T23:23:13.380Z  INFO 1 --- [server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2024-07-22T23:23:13.383Z  INFO 1 --- [server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2024-07-22T23:23:13.420Z  INFO 1 --- [server] [       Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2024-07-22T23:23:13.599Z  INFO 1 --- [server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2024-07-22T23:23:13.605Z  INFO 1 --- [server] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2024-07-22T23:23:13.708Z  INFO 1 --- [server] [           main] b.c.f.g.server.ServerApplication         : Started ServerApplication in 24.744 seconds (process running for 25.584)
+2024-07-22T23:23:24.232Z  INFO 1 --- [server] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-22T23:23:24.242Z  INFO 1 --- [server] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-22T23:23:24.245Z  INFO 1 --- [server] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-07-22T23:23:25.685Z  INFO 1 --- [server] [nio-8081-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ENTREGAS/entregas:1957934716 with status UP (replication=false)
+2024-07-22T23:23:26.853Z  INFO 1 --- [server] [nio-8081-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ENTREGAS/entregas:1957934716 with status UP (replication=true)
+2024-07-22T23:23:29.385Z  INFO 1 --- [server] [nio-8081-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CLIENTES/clientes:-183041335 with status UP (replication=false)
+2024-07-22T23:23:29.904Z  INFO 1 --- [server] [nio-8081-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CLIENTES/clientes:-183041335 with status UP (replication=true)
+2024-07-22T23:23:30.747Z  INFO 1 --- [server] [nio-8081-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUTOS/produtos:-1476315678 with status UP (replication=false)
+2024-07-22T23:23:31.269Z  INFO 1 --- [server] [nio-8081-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUTOS/produtos:-1476315678 with status UP (replication=true)
+2024-07-22T23:23:32.036Z  INFO 1 --- [server] [nio-8081-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USUARIOS/usuarios:-615514980 with status UP (replication=false)
+2024-07-22T23:23:32.479Z  INFO 1 --- [server] [nio-8081-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PEDIDOS/pedidos:1922060404 with status UP (replication=false)
+2024-07-22T23:23:32.554Z  INFO 1 --- [server] [nio-8081-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USUARIOS/usuarios:-615514980 with status UP (replication=true)
+2024-07-22T23:23:32.554Z  INFO 1 --- [server] [nio-8081-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PEDIDOS/pedidos:1922060404 with status UP (replication=true)
+2024-07-22T23:23:37.665Z  WARN 1 --- [server] [nio-8081-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY - 5325e14d0c7f:gateway:8082
+2024-07-22T23:23:37.665Z  WARN 1 --- [server] [nio-8081-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY - 5325e14d0c7f:gateway:8082
+2024-07-22T23:23:37.757Z  INFO 1 --- [server] [nio-8081-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY/5325e14d0c7f:gateway:8082 with status UP (replication=false)
+2024-07-22T23:23:38.272Z  INFO 1 --- [server] [nio-8081-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY/5325e14d0c7f:gateway:8082 with status UP (replication=true)
+2024-07-22T23:24:13.385Z  INFO 1 --- [server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2024-07-22T23:25:13.386Z  INFO 1 --- [server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2024-07-22T23:26:13.385Z  INFO 1 --- [server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2024-07-22T23:26:27.492Z  INFO 1 --- [server] [nio-8081-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USUARIOS/usuarios:-615514980 with status DOWN (replication=false)
+2024-07-22T23:26:28.005Z  INFO 1 --- [server] [io-8081-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USUARIOS/usuarios:-615514980 with status DOWN (replication=true)
+2024-07-22T23:26:33.066Z  INFO 1 --- [server] [nio-8081-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PEDIDOS/pedidos:1922060404 with status DOWN (replication=false)
+2024-07-22T23:26:33.578Z  INFO 1 --- [server] [nio-8081-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PEDIDOS/pedidos:1922060404 with status DOWN (replication=true)
+2024-07-22T23:26:36.562Z  INFO 1 --- [server] [nio-8081-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUTOS/produtos:-1476315678 with status DOWN (replication=false)
+2024-07-22T23:26:37.074Z  INFO 1 --- [server] [nio-8081-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance PRODUTOS/produtos:-1476315678 with status DOWN (replication=true)
+2024-07-22T23:26:39.965Z  INFO 1 --- [server] [nio-8081-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CLIENTES/clientes:-183041335 with status DOWN (replication=false)
+2024-07-22T23:26:40.477Z  INFO 1 --- [server] [nio-8081-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CLIENTES/clientes:-183041335 with status DOWN (replication=true)
+2024-07-22T23:26:43.432Z  INFO 1 --- [server] [nio-8081-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ENTREGAS/entregas:1957934716 with status DOWN (replication=false)
+2024-07-22T23:26:43.945Z  INFO 1 --- [server] [nio-8081-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ENTREGAS/entregas:1957934716 with status DOWN (replication=true)
+2024-07-22T23:26:46.841Z  INFO 1 --- [server] [nio-8081-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY/5325e14d0c7f:gateway:8082 with status DOWN (replication=false)
+2024-07-22T23:26:47.352Z  INFO 1 --- [server] [io-8081-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY/5325e14d0c7f:gateway:8082 with status DOWN (replication=true)
+2024-07-22T23:26:52.344Z  INFO 1 --- [server] [ionShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application SERVER with eureka with status DOWN
+2024-07-22T23:26:52.351Z  INFO 1 --- [server] [ionShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
+2024-07-22T23:26:52.357Z  INFO 1 --- [server] [ionShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2024-07-22T23:26:52.366Z ERROR 1 --- [server] [t-Conn-Cleaner2] c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
+
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.5.jar!/:na]
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.5.jar!/:na]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.5.jar!/:na]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.5.jar!/:na]
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:347) ~[eureka-client-jersey3-2.0.2.jar!/:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-07-22T23:26:52.378Z  INFO 1 --- [server] [ionShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2024-07-22T23:26:52.378Z  INFO 1 --- [server] [ionShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
+2024-07-22T23:26:52.379Z  INFO 1 --- [server] [ionShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2024-07-22T23:26:52.390Z  INFO 1 --- [server] [ionShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2024-07-22T23:26:52.399Z  INFO 1 --- [server] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-07-22T23:26:52.400Z  INFO 1 --- [server] [ionShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

@@ -481,6 +481,36 @@ Desenvolver um  sistema e-commerce com as seguintes funcionalidades:
   curl --location --request GET 'localhost:8082/produtos/produtos/dados-entrega/4'
   ```
 
+### **Salvar o usuário da base de produtos**
+
+- **URL:** `POST http://localhost:8082/produtos/user/`
+- **Descrição:** Cria informações de login na database de produtos.
+- **Corpo da Requisição:**
+  ```json
+  {
+    "id": "123e4567-e89b-12d3-a456-426614174000",
+    "login": "exampleLogin",
+    "password": "examplePassword",
+    "roles": [
+        "USER",
+        "ADMIN"
+    ]
+  }
+
+- **Exemplo:**
+  ```bash
+     curl --location --request POST 'localhost:8082/usuarios/criar-usuario' \
+     --header 'Content-Type: application/json' \
+     --data-raw '{
+        "id": "123e4567-e89b-12d3-a456-426614174000",
+        "login": "exampleLogin",
+        "password": "examplePassword",
+        "roles": [
+            "USER",
+            "ADMIN"
+    ]
+  }'
+
 
 # Gerenciamento de Entregas
 
@@ -536,11 +566,60 @@ Desenvolver um  sistema e-commerce com as seguintes funcionalidades:
   curl --location --request GET 'localhost:8082/produtos/produtos/dados-entrega/4'
   ```
 
+# Gerenciamento de Usuários
+## **POSTs**
+
+### **Registrar Usuário**
+- **URL:** `POST localhost:8082/usuarios/auth/register`
+- **Descrição:** Registra novo usuário.
+- **Corpo da Requisição:**
+  ```json
+  {
+    "login":"teste",
+    "password":"123456",
+    "roles":["ADMIN","USER"]
+  }
+  ```
+- **Exemplo:**
+  ```bash
+   curl --location --request POST 'localhost:8082/usuarios/criar-usuario' \
+   --header 'Content-Type: application/json' \
+   --data-raw '{
+     "login": "teste",
+     "password": "123456",
+     "roles": [
+       "ADMIN",
+       "USER"
+    ]
+  }'
+
+  ```
+
+### **Login de Usuário**
+- **URL:** `POST localhost:8082/entregas/entregas/criar-entrega`
+- **Descrição:** Cria uma nova entrega.
+- **Corpo da Requisição:**
+  ```json
+  {
+    "login":"teste",
+    "password":"123456"
+  }
+  ```
+- **Exemplo:**
+  ```bash
+    curl --location --request POST 'localhost:8082/usuarios/criar-usuario' \
+   --header 'Content-Type: application/json' \
+   --data-raw '{
+     "login": "teste",
+     "password": "123456"
+   }'
+
+  ```
 
 
 # Deploy
 
-#### Deploy local:
+#### Deploy local(Docker Compose):
 
 Basta acessar https://github.com/matheushajer/projeto-fiap-fase-5/tree/master/deployment/images para encontrar os Dockerfiles das imagens criadas.
 
@@ -558,7 +637,7 @@ OBS: Mais informações em: https://docs.docker.com/compose/
 #### Links:
 - Eureka: http:localhost:8081
 - Gateway: http:localhost:8082
-- Repositório de imagens: https://hub.docker.com/repository/docker/yuriesena/projeto-fiap-fase-5/tags
+- Repositório de imagens: https://hub.docker.com/repository/docker/yuriesena/fase5/tags
 
 ## Autores
 
