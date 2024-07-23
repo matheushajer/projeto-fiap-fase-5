@@ -10,10 +10,10 @@ public class UserSenderService {
     private final WebClient webClient;
 
     private final String[] serviceUrls = {
-            "http://produtos/user",
-            "http://clientes/user",
-            "http://pedidos/user",
-            "http://entrega/user"
+            "http://gateway:8082/produtos/user",
+            "http://gateway:8082/clientes/user",
+            "http://gateway:8082/pedidos/user",
+            "http://gateway:8082/entregas/user"
     };
 
     public UserSenderService(WebClient.Builder webClient) {
